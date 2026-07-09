@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khananta — Elevating Digital Presence with Exceptional Design</title>
+    <meta name="description" content="A professional, ultra-minimalist, and premium modern portfolio website design layout inspired by GSAP. Featuring bento-grid layouts, monochrome aesthetics, and smooth animations.">
+    <!-- Google Fonts: Outfit (Display) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="image/logo tranparan.png">
+    <link rel="apple-touch-icon" href="image/logo tranparan.png">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Preloader / Loading Screen -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-brand">Khananta</div>
+            <div class="preloader-counter">00</div>
+            <div class="preloader-progress-bg">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ambient Background Gradients -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Background Grid Overlay -->
+    <div class="bg-grid-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+        <!-- Header / Navigation (Floating Glassmorphic Capsule) -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="image/logo orang.png" alt="Khananta" class="nav-logo-avatar">
+                Khananta
+            </a>
+            <nav class="nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#services" class="nav-link">Skill</a>
+                <a href="#gallery" class="nav-link">Graphic Design</a>
+            </nav>
+            <a href="mailto:khanifyunanpratama@gmail.com" class="btn btn-primary contact-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;flex-shrink:0;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Contact
+            </a>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+
+    <main>
+                <!-- Hero Section -->
+        <section class="hero-section">
+            <!-- Left Side Floating Mockups (Abstract Arched Layout - Total 2 cards on left) -->
+            <div class="hero-floating-mockups left-side">
+                <!-- Card 1 (DompetKu Login Visual Demo) -->
+                <div class="mockup-card floating-card card-left-1 dompetku-login-view">
+                    <div class="mockup-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="mockup-tab-title">DompetKu</span>
+                    </div>
+                    <div class="dompetku-login-body">
+                        <!-- Gradient Mesh background -->
+                        <div class="login-mesh-bg"></div>
+                        
+                        <!-- Top Header Logo -->
+                        <div class="login-logo-header">
+                            <div class="login-logo-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M21 12V7c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2v10c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-3" />
+                                  <path d="M21 12H17c-1.1 0-2-.9-2-2s.9-2 2-2h4" />
+                                </svg>
+                            </div>
+                            <span class="login-logo-text">Dompet<span class="blue-text">Ku</span></span>
+                        </div>
+
+                        <!-- Middle Dashboard Preview Box -->
+                        <div class="login-mockup-box">
+                            <!-- Box Header -->
+                            <div class="box-header-row">
+                                <div>
+                                    <span class="box-tag">Saldo Aktif</span>
+                                    <h4 class="box-balance">Rp 14.850.000</h4>
+                                </div>
+                                <span class="box-badge">
+                                    <span class="pulse-dot"></span>
+                                    +14.2%
+                                </span>
+                            </div>
+
+                            <!-- SVG Sparkline Graph -->
+                            <div class="box-graph">
+                                <svg viewBox="0 0 100 30" class="graph-svg" preserveAspectRatio="none">
+                                    <defs>
+                                      <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+                                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0"/>
+                                      </linearGradient>
+                                    </defs>
+                                    <line x1="0" y1="10" x2="100" y2="10" stroke="#1e293b" stroke-width="0.3" stroke-dasharray="1.5"/>
+                                    <line x1="0" y1="20" x2="100" y2="20" stroke="#1e293b" stroke-width="0.3" stroke-dasharray="1.5"/>
+                                    <path d="M 0 25 Q 15 12, 30 18 T 60 4 T 85 10 T 100 2 L 100 30 L 0 30 Z" fill="url(#chartGradient)"/>
+                                    <path d="M 0 25 Q 15 12, 30 18 T 60 4 T 85 10 T 100 2" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+                                    <circle cx="60" cy="4" r="1.5" fill="#3b82f6" stroke="#ffffff" stroke-width="0.5"/>
+                                </svg>
+                            </div>
+
+                            <!-- Box Recent Transactions -->
+                            <div class="box-transactions">
+                                <p class="tx-section-title">Transaksi Terbaru</p>
+                                
+                                <div class="box-tx-item">
+                                    <div class="tx-circle green-bg">G</div>
+                                    <div class="tx-item-info">
+                                        <p class="tx-name">Gaji Freelance</p>
+                                        <p class="tx-time">Sampingan • Hari ini</p>
+                                    </div>
+                                    <span class="tx-value green-text">+Rp 4.5m</span>
+                                </div>
+
+                                <div class="box-tx-item">
+                                    <div class="tx-circle red-bg">M</div>
+                                    <div class="tx-item-info">
+                                        <p class="tx-name">Kafe & Kopi Sore</p>
+                                        <p class="tx-time">Makanan • Kemarin</p>
+                                    </div>
+                                    <span class="tx-value red-text">-Rp 180k</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Branding Text -->
+                        <div class="login-brand-desc">
+                            <h5 class="desc-title">Kelola Keuangan Praktis</h5>
+                            <p class="desc-text">Lacak setiap rupiah pemasukan dan pengeluaran Anda. Analisis rekap bulanan secara detail untuk membantu Anda mengendalikan finansial secara penuh.</p>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="login-footer">
+                            <span>© 2026 DompetKu</span>
+                            <span>Powered By Khananta</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 (Habitzzz Login Branding Panel) -->
+                <div class="mockup-card floating-card card-left-2 habitzzz-login-branding">
+                    <div class="mockup-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="mockup-tab-title">Habitzzz</span>
+                    </div>
+                    <div class="mockup-body habitzzz-body">
+                        <!-- Background Grid Overlay -->
+                        <div class="habitzzz-grid-bg"></div>
+
+                        <!-- Floating Widgets Area -->
+                        <div class="habitzzz-widgets-container">
+                            <!-- HabitForge Card (Top) -->
+                            <div class="habitzzz-widget-card card-habits">
+                                <div class="card-header-row">
+                                    <div>
+                                        <h4 class="card-main-title">HabitForge Hari Ini</h4>
+                                        <p class="card-sub-title">Rutinitas produktivitas Anda</p>
+                                    </div>
+                                    <span class="badge-completed">3/6 Selesai</span>
+                                </div>
+                                <div class="habits-list-preview">
+                                    <div class="habit-row done">
+                                        <span class="circle-check">✓</span>
+                                        <span class="habit-label-text">Minum Air Putih 2L</span>
+                                    </div>
+                                    <div class="habit-row done">
+                                        <span class="circle-check">✓</span>
+                                        <span class="habit-label-text">Latihan Coding</span>
+                                    </div>
+                                    <div class="habit-row done">
+                                        <span class="circle-check">✓</span>
+                                        <span class="habit-label-text">Olahraga Pagi 30m</span>
+                                    </div>
+                                    <div class="habit-row todo">
+                                        <span class="circle-empty"></span>
+                                        <span class="habit-label-text">Membaca Buku</span>
+                                    </div>
+                                    <div class="habit-row todo">
+                                        <span class="circle-empty"></span>
+                                        <span class="habit-label-text">Meditasi 10m</span>
+                                    </div>
+                                    <div class="habit-row todo">
+                                        <span class="circle-empty"></span>
+                                        <span class="habit-label-text">Belajar Bahasa Inggris</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tasks Card (Bottom) -->
+                            <div class="habitzzz-widget-card card-tasks">
+                                <h4 class="card-main-title">Tugas Terdekat</h4>
+                                <p class="card-sub-title">Deadline akademik terdekat</p>
+                                
+                                <div class="task-detail-box">
+                                    <div class="task-text-info">
+                                        <span class="task-title-text">Laporan Jaringan Saraf Tiruan</span>
+                                        <span class="task-due-date">📅 Besok, 23:59</span>
+                                    </div>
+                                    <span class="badge-tag-high">High</span>
+                                </div>
+                                <div class="task-detail-box task-detail-box--medium">
+                                    <div class="task-text-info">
+                                        <span class="task-title-text">Presentasi Seminar Skripsi</span>
+                                        <span class="task-due-date">📅 Kamis, 09:00</span>
+                                    </div>
+                                    <span class="badge-tag-medium">Med</span>
+                                </div>
+                                <div class="task-detail-box task-detail-box--low">
+                                    <div class="task-text-info">
+                                        <span class="task-title-text">Kuis Algoritma & Pemrograman</span>
+                                        <span class="task-due-date">📅 Jumat, 13:00</span>
+                                    </div>
+                                    <span class="badge-tag-low">Low</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="habitzzz-footer-text">
+                            © 2026 habitzzz - Powered By Khananta
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central Content -->
+            <div class="hero-container">
+                <h1 class="hero-title">
+                    Hey there,<br>
+                    I'm <span class="highlighter">Khananta</span> 👋
+                </h1>
+                <p class="hero-subtitle-sub text-secondary">Personal portfolio showcasing projects I have worked on.</p>
+                <div class="hero-cta-btn">
+                    <a href="#about" class="btn btn-secondary">Explore Work <i data-lucide="arrow-down" class="btn-icon"></i></a>
+                </div>
+            </div>
+
+            <!-- Right Side Floating Mockups (Abstract Arched Layout - Total 2 cards on right) -->
+            <div class="hero-floating-mockups right-side">
+                <!-- Card 3 (DompetKu Full Interactive Dashboard) -->
+                <div class="mockup-card floating-card card-right-1 dompetku-dashboard-full">
+                    <div class="mockup-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="mockup-tab-title">DompetKu Dashboard</span>
+                    </div>
+                    <div class="dompetku-dashboard-body">
+                        <!-- Left Sidebar -->
+                        <aside class="dashboard-sidebar">
+                             <!-- Logo Brand -->
+                             <div class="sidebar-logo">
+                                 <span class="logo-text">Dompet<span class="blue-text">Ku</span></span>
+                             </div>
+                             <!-- Profile Info -->
+                             <div class="sidebar-profile">
+                                 <div class="profile-avatar">K</div>
+                                 <div class="profile-details">
+                                     <span class="profile-name">Khananta</span>
+                                     <span class="profile-email">khananta@email.com</span>
+                                 </div>
+                             </div>
+                             <!-- Nav Links -->
+                             <nav class="sidebar-nav">
+                                 <a href="#" class="nav-item active">
+                                     <span class="item-label">Ringkasan Dasbor</span>
+                                 </a>
+                                 <a href="#" class="nav-item">
+                                     <span class="item-label">Riwayat Transaksi</span>
+                                 </a>
+                                 <a href="#" class="nav-item">
+                                     <span class="item-label">Target Tabungan</span>
+                                 </a>
+                                 <a href="#" class="nav-item">
+                                     <span class="item-label">Pengingat Tagihan</span>
+                                 </a>
+                                 <a href="#" class="nav-item">
+                                     <span class="item-label">Kalkulator Keuangan</span>
+                                 </a>
+                                 <a href="#" class="nav-item">
+                                     <span class="item-label">Kalender Keuangan</span>
+                                 </a>
+                                 <a href="#" class="nav-item">
+                                     <span class="item-label">Bagi Tagihan</span>
+                                 </a>
+                                 <a href="#" class="nav-item">
+                                     <span class="item-label">Pengaturan</span>
+                                 </a>
+                             </nav>
+                         </aside>
+ 
+                         <!-- Main Content Area (Vertical Stacked Layout) -->
+                         <main class="dashboard-main-content stacked-layout">
+                             <!-- Header Row -->
+                             <header class="main-header">
+                                 <div>
+                                     <h3 class="main-title">Visualisasi Finansial</h3>
+                                     <p class="main-subtitle">Halo Khananta!</p>
+                                 </div>
+                                 <div class="header-actions">
+                                     <span class="action-btn blue-btn">+ Transaksi</span>
+                                 </div>
+                             </header>
+
+                            <!-- Widget 1: Donut Chart (Pie Chart) at the Top -->
+                            <div class="widget-box category-distribution-full">
+                                <h4 class="widget-title">Distribusi Kategori Pengeluaran</h4>
+                                <div class="donut-body-full">
+                                    <div class="donut-chart-container-large">
+                                        <div class="donut-ring-large">
+                                            <div class="donut-center-large">
+                                                <span class="donut-label">TOTAL</span>
+                                                <span class="donut-value">Rp 1.882k</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="donut-legends-full">
+                                        <div class="legend-row">
+                                            <span class="legend-dot blue"></span>
+                                            <span class="legend-text">Lainnya: <strong>Rp 1.554.920</strong> (83%)</span>
+                                        </div>
+                                        <div class="legend-row">
+                                            <span class="legend-dot rose"></span>
+                                            <span class="legend-text">Makanan: <strong>Rp 327.400</strong> (17%)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Widget 2: Bar Chart in the Middle -->
+                            <div class="widget-box daily-spending-full">
+                                <h4 class="widget-title">Tren Pengeluaran Harian</h4>
+                                <div class="bar-body-full">
+                                    <div class="bars-container-large-full">
+                                        <div class="bar-item-full"><div class="bar h-60"></div><span class="bar-date">01/07</span></div>
+                                        <div class="bar-item-full"><div class="bar h-20"></div><span class="bar-date">02/07</span></div>
+                                        <div class="bar-item-full"><div class="bar h-80"></div><span class="bar-date">03/07</span></div>
+                                        <div class="bar-item-full"><div class="bar h-40"></div><span class="bar-date">04/07</span></div>
+                                        <div class="bar-item-full"><div class="bar h-70"></div><span class="bar-date">06/07</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Widget 3: Line Chart (Annual Trend) at the Bottom -->
+                            <div class="widget-box annual-trend-full">
+                                <h4 class="widget-title">Tren Keuangan Tahunan</h4>
+                                <div class="line-chart-body-full">
+                                    <svg viewBox="0 0 200 45" class="line-chart-svg" preserveAspectRatio="none">
+                                        <line x1="0" y1="10" x2="200" y2="10" stroke="rgba(255,255,255,0.03)" stroke-width="0.3"/>
+                                        <line x1="0" y1="20" x2="200" y2="20" stroke="rgba(255,255,255,0.03)" stroke-width="0.3"/>
+                                        <line x1="0" y1="30" x2="200" y2="30" stroke="rgba(255,255,255,0.03)" stroke-width="0.3"/>
+                                        <defs>
+                                            <linearGradient id="lineAreaGradient" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/>
+                                                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M 0 30 C 30 10, 60 40, 90 20 C 120 0, 150 42, 200 15 L 200 45 L 0 45 Z" fill="url(#lineAreaGradient)"/>
+                                        <path d="M 0 30 C 30 10, 60 40, 90 20 C 120 0, 150 42, 200 15" fill="none" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+                <!-- Card 4 (MacaBae Library Project) -->
+                <div class="mockup-card floating-card card-right-2 macabae-preview">
+                    <div class="mockup-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="mockup-tab-title macabae-tab-title">MacaBae · Beranda</span>
+                    </div>
+                    <div class="mockup-body macabae-body">
+
+                        <!-- Search Bar -->
+                        <div class="mb-search-bar">
+                            <div class="mb-search-input">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                                <span class="mb-search-placeholder">Cari buku yang kamu mau</span>
+                            </div>
+                            <div class="mb-search-btn">Cari</div>
+                        </div>
+
+                        <!-- Blue Promo Banner -->
+                        <div class="mb-banner">
+                            <div class="mb-banner-waves"></div>
+                            <div class="mb-banner-content">
+                                <span class="mb-brand-logo">MacaBae</span>
+                                <p class="mb-banner-title">Nikmati Peminjaman Buku Digital,<br>Mudah dan Cepat!</p>
+                                <p class="mb-banner-sub">Mudah, Cepat, dan Tanpa Ribet</p>
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="mb-stats-grid">
+                            <div class="mb-stat-card">
+                                <div class="mb-stat-icon blue-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="mb-stat-label">Dipinjam</p>
+                                    <p class="mb-stat-value">3 Buku</p>
+                                </div>
+                            </div>
+                            <div class="mb-stat-card">
+                                <div class="mb-stat-icon rose-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="mb-stat-label">Tersimpan</p>
+                                    <p class="mb-stat-value">12 Buku</p>
+                                </div>
+                            </div>
+                            <div class="mb-stat-card">
+                                <div class="mb-stat-icon emerald-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                </div>
+                                <div>
+                                    <p class="mb-stat-label">Riwayat</p>
+                                    <p class="mb-stat-value">27 Buku</p>
+                                </div>
+                            </div>
+                            <div class="mb-stat-card">
+                                <div class="mb-stat-icon amber-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                </div>
+                                <div>
+                                    <p class="mb-stat-label">Denda</p>
+                                    <p class="mb-stat-value">Rp 5.000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Borrowed Books Section -->
+                        <div class="mb-section">
+                            <p class="mb-section-title">Buku yang sedang dipinjam</p>
+                            <div class="mb-books-grid">
+                                <!-- Book Cover 1 (with return date badge) -->
+                                <div class="mb-book-cover">
+                                    <div class="mb-book-date-badge">📅 12 Jul</div>
+                                    <div class="mb-book-bg" style="background: linear-gradient(135deg,#3b5998,#192a56);"></div>
+                                </div>
+                                <!-- Book Cover 2 -->
+                                <div class="mb-book-cover">
+                                    <div class="mb-book-date-badge">📅 18 Jul</div>
+                                    <div class="mb-book-bg" style="background: linear-gradient(135deg,#6a11cb,#2575fc);"></div>
+                                </div>
+                                <!-- Book Cover 3 -->
+                                <div class="mb-book-cover">
+                                    <div class="mb-book-date-badge">📅 20 Jul</div>
+                                    <div class="mb-book-bg" style="background: linear-gradient(135deg,#f7971e,#ffd200);"></div>
+                                </div>
+                                <!-- Empty Slot -->
+                                <div class="mb-book-cover mb-book-empty">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#4D9BE2" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                    <span>Pinjam</span>
+                                </div>
+                                <!-- Empty Slot -->
+                                <div class="mb-book-cover mb-book-empty">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#4D9BE2" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                    <span>Pinjam</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Popular Books Section -->
+                        <div class="mb-section">
+                            <div class="mb-section-header">
+                                <p class="mb-section-title">Buku populer</p>
+                                <span class="mb-lihat-btn">Lihat semua →</span>
+                            </div>
+                            <div class="mb-books-grid">
+                                <div class="mb-book-cover">
+                                    <div class="mb-book-badge available">Tersedia</div>
+                                    <div class="mb-book-bg" style="background: linear-gradient(135deg,#11998e,#38ef7d);"></div>
+                                </div>
+                                <div class="mb-book-cover">
+                                    <div class="mb-book-badge ebook">E-Book</div>
+                                    <div class="mb-book-bg" style="background: linear-gradient(135deg,#f953c6,#b91d73);"></div>
+                                </div>
+                                <div class="mb-book-cover">
+                                    <div class="mb-book-badge borrowed">Terpinjam</div>
+                                    <div class="mb-book-bg" style="background: linear-gradient(135deg,#fc4a1a,#f7b733);"></div>
+                                </div>
+                                <div class="mb-book-cover">
+                                    <div class="mb-book-badge available">Tersedia</div>
+                                    <div class="mb-book-bg" style="background: linear-gradient(135deg,#4facfe,#00f2fe);"></div>
+                                </div>
+                                <div class="mb-book-cover">
+                                    <div class="mb-book-badge ebook">E-Book</div>
+                                    <div class="mb-book-bg" style="background: linear-gradient(135deg,#a18cd1,#fbc2eb);"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="mb-footer">© 2026 MacaBae · Powered By Khananta</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="about-layout">
+                    <div class="about-left">
+                        <h2 class="about-title-head">About Me</h2>
+                    </div>
+                    <div class="about-right">
+                        <p class="about-text">
+                            The name <strong>Khananta</strong> is derived from my full name, <strong>Khanif Yunan Pratama</strong>. Currently, I am an active student at Telkom University Purwokerto, deeply immersed in the world of technology. I constantly challenge myself to learn and evolve, channeling my energy into two main creative outlets, programming and digital design.
+                        </p>
+                        
+                        <div class="about-social-grid">
+                            <a href="https://dribbble.com/Khananta" target="_blank" class="social-card dribbble">
+                                <div class="social-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="social-icon-svg"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.49-11.05 1-11.6 8.56"></path></svg>
+                                </div>
+                                <div class="social-info">
+                                    <span class="social-name">Dribbble</span>
+                                    <span class="social-tag">Showcase</span>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="social-arrow"></i>
+                            </a>
+                            <a href="https://github.com/Khananta" target="_blank" class="social-card github">
+                                <div class="social-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="social-icon-svg"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                </div>
+                                <div class="social-info">
+                                    <span class="social-name">GitHub</span>
+                                    <span class="social-tag">Code</span>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="social-arrow"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/khanif-yunan-pratama-2b8329261/" target="_blank" class="social-card linkedin">
+                                <div class="social-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="social-icon-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </div>
+                                <div class="social-info">
+                                    <span class="social-name">LinkedIn</span>
+                                    <span class="social-tag">Network</span>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="social-arrow"></i>
+                            </a>
+                            <a href="https://www.instagram.com/khananta_/" target="_blank" class="social-card instagram">
+                                <div class="social-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="social-icon-svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                </div>
+                                <div class="social-info">
+                                    <span class="social-name">Instagram</span>
+                                    <span class="social-tag">@khananta_</span>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="social-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Tools Section (Curved Layout) -->
+        <section id="tools" class="tools-section">
+            <div class="tools-container">
+                <h2 class="tools-title">Tech & Creative Stack</h2>
+                <p class="tools-subtitle text-secondary">How I Bring Ideas to Life</p>
+                <div class="tools-arch-container">
+                    <!-- Tool 1: Figma -->
+                    <div class="tool-card tool-figma">
+                        <div class="tool-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" class="tool-icon-svg"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path><path d="M12 2h3.5a3.5 3.5 0 0 1 0 7H12V2z"></path><path d="M12 9h3.5a3.5 3.5 0 0 1 3.5 3.5v0a3.5 3.5 0 0 1-3.5 3.5H12V9z"></path><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path><path d="M8.5 16H12v4.5A3.5 3.5 0 0 1 8.5 24v0A3.5 3.5 0 0 1 5 20.5V20a4 4 0 0 1 3.5-4z"></path></svg>
+                        </div>
+                        <span class="tool-name">Figma</span>
+                    </div>
+                    <!-- Tool 2: VS Code -->
+                    <div class="tool-card tool-vscode">
+                        <div class="tool-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" class="tool-icon-svg"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+                        </div>
+                        <span class="tool-name">VS Code</span>
+                    </div>
+                    <!-- Tool 3: CapCut -->
+                    <div class="tool-card tool-capcut">
+                        <div class="tool-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" class="tool-icon-svg"><path d="M4 5h16l-5 6H9z"></path><path d="M9 13h6l5 6H4z"></path></svg>
+                        </div>
+                        <span class="tool-name">CapCut</span>
+                    </div>
+                    <!-- Tool 4: GitHub -->
+                    <div class="tool-card tool-github">
+                        <div class="tool-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" class="tool-icon-svg"><path d="M9 18c-4.51 2-5-2-7-2"></path><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path></svg>
+                        </div>
+                        <span class="tool-name">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Our past project</h2>
+                    <span class="title-line"></span>
+                </div>
+                <a href="#projects" class="btn btn-secondary see-all-btn">
+                    See All Cases <i data-lucide="arrow-down-right" class="btn-icon"></i>
+                </a>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Habitzzz -->
+                <div class="project-card p-left">
+                    <div class="project-mockup-wrapper">
+                        <!-- Bento Mockup Habitzzz (Exact Replica of their website) -->
+                        <div class="bento-mockup habitzzz-mockup">
+                            <!-- Base layer (Back Card): Habitzzz Login Screen SVG -->
+                            <div class="mockup-layer layer-base habitzzz-login-screen-mock">
+                                <img src="image/habitzzz/habitzzz-login.svg" alt="Habitzzz Login" class="habitzzz-login-img">
+                            </div>
+                            
+                            <!-- Overlay layer (Front Card): Habitzzz Dashboard with Sidebar -->
+                            <div class="mockup-layer layer-overlay-1 habitzzz-dashboard-mock">
+                                 <img src="image/habitzzz/habitzzz-dashboard.svg" alt="Habitzzz Dashboard" class="habitzzz-login-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-name">Habitzzz</h3>
+                        <p class="project-desc">Habitzzz is a digital platform designed to help users build and track daily micro-habits, striving to become 1% better every day, a concept directly inspired by the philosophy of Atomic Habits.</p>
+                        <a href="https://www.habitzzz-bykhananta.online/" target="_blank" class="project-link">
+                            <span>Visit project</span> <i data-lucide="arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Dompetku (Layout Reversed) -->
+                <div class="project-card p-right">
+                    <div class="project-details">
+                        <h3 class="project-name">Dompetku</h3>
+                        <p class="project-desc">Dompetku is a modern financial recording platform designed to help you manage your budget, track your daily expenses, and consolidate your savings neatly without any hassle.</p>
+                        <a href="https://dompetku-bykhananta.online/" target="_blank" class="project-link">
+                            <span>Visit project</span> <i data-lucide="arrow-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="project-mockup-wrapper">
+                        <!-- Bento Mockup Dompetku -->
+                        <div class="bento-mockup dompetku-mockup">
+                            <!-- Base layer (Back Card): Dompetku Dashboard SVG -->
+                            <div class="mockup-layer layer-base dompetku-dashboard-mock">
+                                <img src="image/dompetku/dompetku-dashboard.svg" alt="Dompetku Dashboard" class="dompetku-mockup-img">
+                            </div>
+                            <!-- Overlay layer (Front Card): Dompetku Login SVG -->
+                            <div class="mockup-layer layer-overlay-2 dompetku-login-mock">
+                                <img src="image/dompetku/dompetku-login.svg" alt="Dompetku Login" class="dompetku-mockup-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+                <!-- Graphic Design Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Selected Graphic Designs</h2>
+                    <span class="title-line"></span>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="image/gallery/design_sample_1.webp" alt="Akura Party Planner Poster Design" class="gallery-img" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-info">
+                                <span class="gallery-item-category">Brand Graphics</span>
+                                <h4 class="gallery-item-name">Akura Party Planner</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="image/gallery/design_sample_2.webp" alt="Pemuda Pemudi RT1 Poster Design" class="gallery-img" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-info">
+                                <span class="gallery-item-category">Poster Design</span>
+                                <h4 class="gallery-item-name">Pemuda Pemudi RT1</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="image/gallery/design_sample_3.webp" alt="Akura Party Planner Poster Design" class="gallery-img" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-info">
+                                <span class="gallery-item-category">Brand Graphics</span>
+                                <h4 class="gallery-item-name">Akura Party Planner</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal for Graphic Designs -->
+        <div id="gallery-lightbox" class="lightbox">
+            <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+            <div class="lightbox-content">
+                <img src="" alt="Enlarged poster design" class="lightbox-img">
+            </div>
+        </div>
+
+                <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="services-wrapper">
+                <div class="services-left">
+                    <h2 class="services-title-head">What I Bring<br>to the Table</h2>
+                    
+                    <!-- Brain Mockup Card (Full Width) -->
+                    <div class="book-mockup-container">
+                        <div class="book-mockup brain-mockup-full">
+                            <div class="brain-page-layout-full">
+                                <div class="brain-concept-container-full">
+                                    <svg viewBox="0 0 200 200" class="brain-svg-full" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Defs for ClipPath and Filters -->
+                                        <defs>
+                                            <filter id="glow-brain" x="-20%" y="-20%" width="140%" height="140%">
+                                                <feGaussianBlur stdDeviation="4" result="blur" />
+                                                <feMerge>
+                                                    <feMergeNode in="blur" />
+                                                    <feMergeNode in="SourceGraphic" />
+                                                </feMerge>
+                                            </filter>
+                                            <clipPath id="circle-clip">
+                                                <circle cx="100" cy="100" r="32" />
+                                            </clipPath>
+                                        </defs>
+                                        
+                                        <!-- Cable Lines connecting to brain - fanned out to fill 16:10 aspect ratio -->
+                                        <path d="M 5 20 L 60 20 L 80 80" class="cable-line" />
+                                        <path d="M 5 60 L 50 60 L 75 88" class="cable-line" />
+                                        <path d="M 5 140 L 50 140 L 75 112" class="cable-line" />
+                                        <path d="M 5 180 L 60 180 L 80 120" class="cable-line" />
+                                        
+                                        <path d="M 195 20 L 140 20 L 120 80" class="cable-line" />
+                                        <path d="M 195 60 L 150 60 L 125 88" class="cable-line" />
+                                        <path d="M 195 140 L 150 140 L 125 112" class="cable-line" />
+                                        <path d="M 195 180 L 140 180 L 120 120" class="cable-line" />
+                                        
+                                        <!-- Center connection rings -->
+                                        <circle cx="100" cy="100" r="42" class="connection-ring" />
+                                        <circle cx="100" cy="100" r="36" class="connection-ring inner" />
+                                        
+                                        <!-- Glowing Border Ring for Logo -->
+                                        <circle cx="100" cy="100" r="32.5" class="logo-glow-ring" filter="url(#glow-brain)" />
+                                        
+                                        <!-- Circular clipped Logo Image in the center -->
+                                        <image href="image/logo orang.png" x="68" y="68" width="64" height="64" clip-path="url(#circle-clip)" />
+                                        
+                                        <!-- Animated pulses / nodes traveling along cables -->
+                                        <circle r="2.5" class="pulse-node p1"><animateMotion dur="2.5s" repeatCount="indefinite" path="M 5 20 L 60 20 L 80 80" /></circle>
+                                        <circle r="2.5" class="pulse-node p2"><animateMotion dur="3s" repeatCount="indefinite" path="M 195 180 L 140 180 L 120 120" /></circle>
+                                        <circle r="2.5" class="pulse-node p3"><animateMotion dur="2.2s" repeatCount="indefinite" path="M 5 140 L 50 140 L 75 112" /></circle>
+                                        <circle r="2.5" class="pulse-node p4"><animateMotion dur="2.8s" repeatCount="indefinite" path="M 195 60 L 150 60 L 125 88" /></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-right">
+                    <div class="services-list">
+                        <!-- Service 1 -->
+                        <div class="service-item">
+                            <div class="service-title-row">
+                                <span class="service-num">01</span>
+                                <h3 class="service-name">UI/UX & Digital Design</h3>
+                                <i data-lucide="arrow-up-right" class="service-arrow"></i>
+                            </div>
+                            <div class="service-content">
+                                <p>Crafting seamless user experiences and high-fidelity interfaces using a clean, modern aesthetic.</p>
+                            </div>
+                        </div>
+                        <!-- Service 2 -->
+                        <div class="service-item">
+                            <div class="service-title-row">
+                                <span class="service-num">02</span>
+                                <h3 class="service-name">Graphic Design</h3>
+                                <i data-lucide="arrow-up-right" class="service-arrow"></i>
+                            </div>
+                            <div class="service-content">
+                                <p>Designing impactful brand identities, custom vector graphics, and minimalist visual assets tailored for modern media.</p>
+                            </div>
+                        </div>
+                        <!-- Service 3 -->
+                        <div class="service-item">
+                            <div class="service-title-row">
+                                <span class="service-num">03</span>
+                                <h3 class="service-name">Video Editing</h3>
+                                <i data-lucide="arrow-up-right" class="service-arrow"></i>
+                            </div>
+                            <div class="service-content">
+                                <p>Creating engaging visual stories through dynamic motion, precise cuts, and polished post-production to capture audience attention.</p>
+                            </div>
+                        </div>
+                        <!-- Service 4 -->
+                        <div class="service-item">
+                            <div class="service-title-row">
+                                <span class="service-num">04</span>
+                                <h3 class="service-name">Vibe Coding</h3>
+                                <i data-lucide="arrow-up-right" class="service-arrow"></i>
+                            </div>
+                            <div class="service-content">
+                                <p>Riding the current wave of web experiences by focusing on fluid design and logic. I utilize modern vibe coding workflows to craft trend.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Bento Grid Bottom & Philosophy Section -->
+        <section class="philosophy-section">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Behind the Screens</h2>
+                    <span class="title-line"></span>
+                </div>
+            </div>
+            <div class="bento-bottom-grid">
+                <!-- Card 1: Curated Projects -->
+                <div class="bento-bottom-card playlist-card">
+                    <div class="card-tag">FAVORITE MUSIC</div>
+                    <div class="card-title-bottom">About You</div>
+                    <div class="card-subtitle-bottom">Play on Spotify</div>
+                    
+                    <div class="vinyl-mockup-wrapper">
+                        <div class="vinyl-record">
+                            <div class="vinyl-grooves"></div>
+                            <div class="vinyl-label">
+                                <span class="label-logo">Khananta</span>
+                            </div>
+                        </div>
+                        <div class="vinyl-sleeve">
+                            <div class="sleeve-art">
+                                <img src="image/aboutyou.jpeg" alt="About You" class="sleeve-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Design Philosophy (Dieter Rams) -->
+                <div class="bento-bottom-card philosophy-card">
+                    <div class="card-tag">FAVORITE BOOK</div>
+                    <div class="card-title-bottom">Atomic Habits</div>
+                    <div class="card-subtitle-bottom">Book written by James Clear</div>
+                    
+                    <div class="book-3d-wrapper">
+                        <div class="book-3d">
+                            <div class="book-cover">
+                                <img src="image/atomic.jpg" alt="Atomic Habits Cover" class="book-cover-img">
+                                <div class="book-spine-line"></div>
+                            </div>
+                            <div class="book-pages-side"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Text Section (Giant Scrolling Footer Background) -->
+        <section class="marquee-bg-section">
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <span class="marquee-text">Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp;</span>
+                    <span class="marquee-text">Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp; Khananta &nbsp;x&nbsp;</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container-new">
+            <!-- Centered Brand Content -->
+            <div class="footer-brand-centered">
+                <img src="image/logo orang.png" alt="Khananta Logo" class="footer-brand-logo-img">
+                <p class="footer-brand-desc-centered">Have an idea? Let's turn it into a digital reality.</p>
+                
+                <!-- Social Links Grid in Footer -->
+                <div class="footer-social-row">
+                    <a href="https://www.instagram.com/khananta_/" target="_blank" class="footer-social-icon-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="footer-social-svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/khanif-yunan-pratama-2b8329261/" target="_blank" class="footer-social-icon-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="footer-social-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://github.com/Khananta" target="_blank" class="footer-social-icon-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="footer-social-svg"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    </a>
+                    <a href="https://dribbble.com/Khananta" target="_blank" class="footer-social-icon-link" aria-label="Dribbble">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="footer-social-svg"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.49-11.05 1-11.6 8.56"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- MassiveLowercase Branding Text -->
+            <div class="footer-giant-logo-container">
+                <h2 class="footer-giant-logo">khananta</h2>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- GSAP & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Main Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>

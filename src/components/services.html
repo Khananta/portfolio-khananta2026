@@ -1,0 +1,109 @@
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="services-wrapper">
+                <div class="services-left">
+                    <h2 class="services-title-head">What I Bring<br>to the Table</h2>
+                    
+                    <!-- Brain Mockup Card (Full Width) -->
+                    <div class="book-mockup-container">
+                        <div class="book-mockup brain-mockup-full">
+                            <div class="brain-page-layout-full">
+                                <div class="brain-concept-container-full">
+                                    <svg viewBox="0 0 200 200" class="brain-svg-full" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Defs for ClipPath and Filters -->
+                                        <defs>
+                                            <filter id="glow-brain" x="-20%" y="-20%" width="140%" height="140%">
+                                                <feGaussianBlur stdDeviation="4" result="blur" />
+                                                <feMerge>
+                                                    <feMergeNode in="blur" />
+                                                    <feMergeNode in="SourceGraphic" />
+                                                </feMerge>
+                                            </filter>
+                                            <clipPath id="circle-clip">
+                                                <circle cx="100" cy="100" r="32" />
+                                            </clipPath>
+                                        </defs>
+                                        
+                                        <!-- Cable Lines connecting to brain - fanned out to fill 16:10 aspect ratio -->
+                                        <path d="M 5 20 L 60 20 L 80 80" class="cable-line" />
+                                        <path d="M 5 60 L 50 60 L 75 88" class="cable-line" />
+                                        <path d="M 5 140 L 50 140 L 75 112" class="cable-line" />
+                                        <path d="M 5 180 L 60 180 L 80 120" class="cable-line" />
+                                        
+                                        <path d="M 195 20 L 140 20 L 120 80" class="cable-line" />
+                                        <path d="M 195 60 L 150 60 L 125 88" class="cable-line" />
+                                        <path d="M 195 140 L 150 140 L 125 112" class="cable-line" />
+                                        <path d="M 195 180 L 140 180 L 120 120" class="cable-line" />
+                                        
+                                        <!-- Center connection rings -->
+                                        <circle cx="100" cy="100" r="42" class="connection-ring" />
+                                        <circle cx="100" cy="100" r="36" class="connection-ring inner" />
+                                        
+                                        <!-- Glowing Border Ring for Logo -->
+                                        <circle cx="100" cy="100" r="32.5" class="logo-glow-ring" filter="url(#glow-brain)" />
+                                        
+                                        <!-- Circular clipped Logo Image in the center -->
+                                        <image href="image/logo orang.png" x="68" y="68" width="64" height="64" clip-path="url(#circle-clip)" />
+                                        
+                                        <!-- Animated pulses / nodes traveling along cables -->
+                                        <circle r="2.5" class="pulse-node p1"><animateMotion dur="2.5s" repeatCount="indefinite" path="M 5 20 L 60 20 L 80 80" /></circle>
+                                        <circle r="2.5" class="pulse-node p2"><animateMotion dur="3s" repeatCount="indefinite" path="M 195 180 L 140 180 L 120 120" /></circle>
+                                        <circle r="2.5" class="pulse-node p3"><animateMotion dur="2.2s" repeatCount="indefinite" path="M 5 140 L 50 140 L 75 112" /></circle>
+                                        <circle r="2.5" class="pulse-node p4"><animateMotion dur="2.8s" repeatCount="indefinite" path="M 195 60 L 150 60 L 125 88" /></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-right">
+                    <div class="services-list">
+                        <!-- Service 1 -->
+                        <div class="service-item">
+                            <div class="service-title-row">
+                                <span class="service-num">01</span>
+                                <h3 class="service-name">UI/UX & Digital Design</h3>
+                                <i data-lucide="arrow-up-right" class="service-arrow"></i>
+                            </div>
+                            <div class="service-content">
+                                <p>Crafting seamless user experiences and high-fidelity interfaces using a clean, modern aesthetic.</p>
+                            </div>
+                        </div>
+                        <!-- Service 2 -->
+                        <div class="service-item">
+                            <div class="service-title-row">
+                                <span class="service-num">02</span>
+                                <h3 class="service-name">Graphic Design</h3>
+                                <i data-lucide="arrow-up-right" class="service-arrow"></i>
+                            </div>
+                            <div class="service-content">
+                                <p>Designing impactful brand identities, custom vector graphics, and minimalist visual assets tailored for modern media.</p>
+                            </div>
+                        </div>
+                        <!-- Service 3 -->
+                        <div class="service-item">
+                            <div class="service-title-row">
+                                <span class="service-num">03</span>
+                                <h3 class="service-name">Video Editing</h3>
+                                <i data-lucide="arrow-up-right" class="service-arrow"></i>
+                            </div>
+                            <div class="service-content">
+                                <p>Creating engaging visual stories through dynamic motion, precise cuts, and polished post-production to capture audience attention.</p>
+                            </div>
+                        </div>
+                        <!-- Service 4 -->
+                        <div class="service-item">
+                            <div class="service-title-row">
+                                <span class="service-num">04</span>
+                                <h3 class="service-name">Vibe Coding</h3>
+                                <i data-lucide="arrow-up-right" class="service-arrow"></i>
+                            </div>
+                            <div class="service-content">
+                                <p>Riding the current wave of web experiences by focusing on fluid design and logic. I utilize modern vibe coding workflows to craft trend.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
