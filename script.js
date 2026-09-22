@@ -37,14 +37,14 @@ function initLenis() {
     if (typeof Lenis === 'undefined') return;
 
     lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        lerp: 0.09,
         orientation: 'vertical',
         gestureOrientation: 'vertical',
         smoothWheel: true,
-        wheelMultiplier: 1,
-        touchMultiplier: 1.8,
-        infinite: false
+        wheelMultiplier: 1.15,
+        touchMultiplier: 1.5,
+        infinite: false,
+        syncTouch: false
     });
 
     // Synchronize Lenis with GSAP ScrollTrigger
@@ -54,7 +54,7 @@ function initLenis() {
         lenis.raf(time * 1000);
     });
 
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(500, 33);
 
     // Smooth Anchor Navigation
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -64,7 +64,7 @@ function initLenis() {
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                lenis.scrollTo(target, { offset: -40, duration: 1.2 });
+                lenis.scrollTo(target, { offset: -40, duration: 0.9 });
             }
         });
     });
