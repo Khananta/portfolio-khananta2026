@@ -1,0 +1,10 @@
+﻿{
+  "name": "portfolio_2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Khananta - Modern GSAP Portfolio Website 2026",
+  "scripts": {
+    "dev": "node build.js --watch",
+    "build": "node build.js"
+  }
+}

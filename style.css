@@ -54,9 +54,28 @@
 }
 
 html {
-    scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--accent-color) var(--bg-color);
+}
+
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
 }
 
 body {
@@ -66,6 +85,7 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 /* Custom Scrollbar */
@@ -95,6 +115,9 @@ body {
     filter: blur(140px);
     opacity: 0.65; /* Increased opacity from 0.45 to brighten up layout */
     mix-blend-mode: screen;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
 /* Interactive Cursor Glow Background (Spotlight follow effect) */
@@ -152,6 +175,21 @@ body {
     background-position: center center;
     pointer-events: none;
     z-index: -1;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+/* GPU Acceleration for Animated Cards & Sections */
+.mockup-card,
+.floating-card,
+.project-card,
+.gallery-item,
+.bento-bottom-card,
+.service-item,
+.tool-card {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 /* ==========================================================================
@@ -163,11 +201,13 @@ body {
     background: var(--accent-color); /* Glowing purple dot */
     border-radius: 50%;
     position: fixed;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     pointer-events: none;
     z-index: 10000;
     transition: width 0.2s, height 0.2s, background-color 0.2s;
     box-shadow: 0 0 10px var(--accent-color);
+    will-change: transform;
 }
 
 .custom-cursor-follower {
@@ -176,10 +216,12 @@ body {
     border: 1.5px solid rgba(140, 100, 255, 0.45); /* Glowing purple border */
     border-radius: 50%;
     position: fixed;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.08s ease-out, width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s;
+    transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s;
+    will-change: transform;
 }
 
 /* Hover States for Interactive Elements */

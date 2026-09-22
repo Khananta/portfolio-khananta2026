@@ -1,3 +1,6 @@
+// Global Lenis smooth scroll instance
+let lenis;
+
 // Helper to render Lucide Icons safely
 function renderIcons() {
     if (typeof lucide !== 'undefined') {
@@ -7,6 +10,7 @@ function renderIcons() {
 
 document.addEventListener("DOMContentLoaded", () => {
     renderIcons();
+    initLenis();
     initCustomCursor();
     initCursorGlow();
     initPreloader(); // Preloader runs first
@@ -18,13 +22,56 @@ document.addEventListener("DOMContentLoaded", () => {
     initGalleryLightbox();
 });
 
-// Fallback to render icons if CDN loads slowly after DOMContentLoaded
+// Fallback to render icons and refresh ScrollTrigger on full window load
 window.addEventListener("load", () => {
     renderIcons();
+    if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+    }
 });
 
 /* ==========================================================================
-   CUSTOM CURSOR
+   LENIS SMOOTH SCROLL
+   ========================================================================== */
+function initLenis() {
+    if (typeof Lenis === 'undefined') return;
+
+    lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.8,
+        infinite: false
+    });
+
+    // Synchronize Lenis with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
+    // Smooth Anchor Navigation
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                lenis.scrollTo(target, { offset: -40, duration: 1.2 });
+            }
+        });
+    });
+}
+
+/* ==========================================================================
+   CUSTOM CURSOR (Hardware-Accelerated via Translate3D & GSAP Ticker)
    ========================================================================== */
 function initCustomCursor() {
     const cursor = document.querySelector(".custom-cursor");
@@ -32,29 +79,25 @@ function initCustomCursor() {
     
     if (!cursor || !follower) return;
 
-    let posX = 0, posY = 0;
-    let mouseX = 0, mouseY = 0;
+    let posX = window.innerWidth / 2, posY = window.innerHeight / 2;
+    let mouseX = posX, mouseY = posY;
 
-    // Smooth movement using GSAP ticker or simple LERP
-    gsap.to({}, {
-        duration: 0.01,
-        repeat: -1,
-        onRepeat: () => {
-            posX += (mouseX - posX) * 0.25;
-            posY += (mouseY - posY) * 0.25;
+    // Smooth movement using GSAP ticker and GPU translate3d
+    gsap.ticker.add(() => {
+        posX += (mouseX - posX) * 0.22;
+        posY += (mouseY - posY) * 0.22;
 
-            gsap.set(cursor, { css: { left: mouseX, top: mouseY } });
-            gsap.set(follower, { css: { left: posX, top: posY } });
-        }
+        cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        follower.style.transform = `translate3d(${posX}px, ${posY}px, 0) translate(-50%, -50%)`;
     });
 
     window.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-    });
+    }, { passive: true });
 
     // Handle Hover States for Interactive Elements
-    const interactiveElements = document.querySelectorAll("a, button, .btn, .service-item, .bento-bottom-card, .social-card, input, textarea");
+    const interactiveElements = document.querySelectorAll("a, button, .btn, .service-item, .bento-bottom-card, .social-card, input, textarea, .tool-card, .gallery-item");
     interactiveElements.forEach((el) => {
         el.addEventListener("mouseenter", () => {
             document.body.classList.add("hovering-interactive");
@@ -75,9 +118,7 @@ function initHeaderScroll() {
     let lastScroll = 0;
     let isHidden = false;
 
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.scrollY;
-
+    const handleScroll = (currentScroll) => {
         // 1. Add scrolled visual style class
         if (currentScroll > 30) {
             header.classList.add("scrolled");
@@ -85,14 +126,14 @@ function initHeaderScroll() {
             header.classList.remove("scrolled");
         }
 
-        // 2. Hide on scroll down, show on scroll up using CSS transitions
+        // 2. Hide on scroll down, show on scroll up
         if (currentScroll > 180) {
-            if (currentScroll > lastScroll) {
+            if (currentScroll > lastScroll + 3) {
                 if (!isHidden) {
                     isHidden = true;
                     header.classList.add("header-hidden");
                 }
-            } else {
+            } else if (currentScroll < lastScroll - 3) {
                 if (isHidden) {
                     isHidden = false;
                     header.classList.remove("header-hidden");
@@ -106,7 +147,13 @@ function initHeaderScroll() {
         }
 
         lastScroll = currentScroll;
-    });
+    };
+
+    if (lenis) {
+        lenis.on('scroll', (e) => handleScroll(e.scroll));
+    } else {
+        window.addEventListener("scroll", () => handleScroll(window.scrollY), { passive: true });
+    }
 }
 
 /* ==========================================================================
@@ -158,11 +205,13 @@ function initMobileMenu() {
             toggle.classList.remove("active");
             backdrop.classList.remove("active");
             document.body.classList.remove("menu-open");
+            if (lenis) lenis.start();
         } else {
             nav.classList.add("active");
             toggle.classList.add("active");
             backdrop.classList.add("active");
             document.body.classList.add("menu-open");
+            if (lenis) lenis.stop();
         }
     };
 
@@ -177,6 +226,7 @@ function initMobileMenu() {
             toggle.classList.remove("active");
             backdrop.classList.remove("active");
             document.body.classList.remove("menu-open");
+            if (lenis) lenis.start();
         }
     });
 }
@@ -602,19 +652,30 @@ function init3DTilt() {
 
 
 /* ==========================================================================
-   INTERACTIVE CURSOR GLOW BACKGROUND & TYPEWRITER HELPERS
+   INTERACTIVE CURSOR GLOW BACKGROUND & RAF THROTTLE
    ========================================================================== */
 function initCursorGlow() {
     const glowBg = document.createElement("div");
     glowBg.className = "cursor-glow-bg";
     document.body.appendChild(glowBg);
 
+    let rafScheduled = false;
+    let targetX = 0;
+    let targetY = 0;
+
     window.addEventListener("mousemove", (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
-        glowBg.style.setProperty("--mouse-x", `${x}px`);
-        glowBg.style.setProperty("--mouse-y", `${y}px`);
-    });
+        targetX = e.clientX;
+        targetY = e.clientY;
+
+        if (!rafScheduled) {
+            rafScheduled = true;
+            requestAnimationFrame(() => {
+                glowBg.style.setProperty("--mouse-x", `${targetX}px`);
+                glowBg.style.setProperty("--mouse-y", `${targetY}px`);
+                rafScheduled = false;
+            });
+        }
+    }, { passive: true });
 }
 
 /* ==========================================================================
@@ -626,8 +687,14 @@ function initPreloader() {
     const progressBar = document.querySelector(".preloader-progress-bar");
     const brand = document.querySelector(".preloader-brand");
     
+    if (lenis) lenis.stop();
+
     if (!preloader || !counter || !progressBar) {
         initGSAPAnimations();
+        if (lenis) {
+            lenis.start();
+            ScrollTrigger.refresh();
+        }
         return;
     }
 
@@ -657,10 +724,17 @@ function initPreloader() {
 
             setTimeout(() => {
                 initGSAPAnimations();
+                if (lenis) {
+                    lenis.start();
+                    ScrollTrigger.refresh();
+                }
             }, 300);
 
             setTimeout(() => {
                 preloader.remove();
+                if (typeof ScrollTrigger !== 'undefined') {
+                    ScrollTrigger.refresh();
+                }
             }, 1300);
         }
     });
@@ -741,12 +815,14 @@ function initToolsPopup() {
             // Show Modal with Animation
             modal.classList.add("active");
             document.body.style.overflow = "hidden"; // Prevent background scroll
+            if (lenis) lenis.stop();
         });
     });
 
     const closeModal = () => {
         modal.classList.remove("active");
         document.body.style.overflow = ""; // Re-enable background scroll
+        if (lenis) lenis.start();
     };
 
     closeBtn.addEventListener("click", closeModal);
@@ -784,6 +860,7 @@ function initGalleryLightbox() {
                 lightboxImg.alt = img.alt;
                 lightbox.classList.add("active");
                 document.body.classList.add("lightbox-open");
+                if (lenis) lenis.stop();
             }
         });
     });
@@ -791,6 +868,7 @@ function initGalleryLightbox() {
     const closeLightbox = () => {
         lightbox.classList.remove("active");
         document.body.classList.remove("lightbox-open");
+        if (lenis) lenis.start();
         setTimeout(() => {
             if (!lightbox.classList.contains("active")) {
                 lightboxImg.src = "";
